@@ -39,7 +39,7 @@ describe('Buy a t-shirt', () => {
     await browser.sleep(3000);
     await summaryStepPage.summary();
     await browser.sleep(3000);
-    await signInStepPage.signIn();
+    await signInStepPage.signIn('aperdomobo@gmail.com', 'WorkshopProtractor');
     await browser.sleep(3000);
     await addressStepPage.addressStep();
     await browser.sleep(3000);

@@ -7,9 +7,9 @@ export class SignInStepPage {
     this.elementFinder = $('#SubmitLogin > span');
   }
 
-  public async signIn(): Promise<void> {
-    await $('#email').sendKeys('aperdomobo@gmail.com');
-    await $('#passwd').sendKeys('WorkshopProtractor');
+  public async signIn(email: string, password: string): Promise<void> {
+    await $('#email').sendKeys(email);
+    await $('#passwd').sendKeys(password);
     await this.elementFinder.click();
   }
 }
