@@ -1,4 +1,4 @@
-import { $, browser } from 'protractor';
+import { browser } from 'protractor';
 import {
   MenuContentPage,
   ProductListPage,
@@ -39,30 +39,17 @@ describe('Buy a t-shirt', () => {
     await browser.sleep(3000);
     await summaryStepPage.summary();
     await browser.sleep(3000);
-
-    await $('#email').sendKeys('aperdomobo@gmail.com');
-    await $('#passwd').sendKeys('WorkshopProtractor');
-
     await signInStepPage.signIn();
     await browser.sleep(3000);
-
     await addressStepPage.addressStep();
     await browser.sleep(3000);
-
-    await shippingStepPage.shipping();
+    await shippingStepPage.acceptanceTermsService();
     await browser.sleep(3000);
-
-    await paymentStepPage.payment();
+    await paymentStepPage.paymentShippingStep();
     await browser.sleep(3000);
-
     await bankPaymentPage.bankPayment();
     await browser.sleep(3000);
-
     await orderSummaryPage.orderSummary();
     await browser.sleep(3000);
-
-    await expect($('#center_column > div > p > strong').getText()).toBe(
-      'Your order on My Store is complete.'
-    );
   });
 });

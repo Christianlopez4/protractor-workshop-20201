@@ -4,10 +4,10 @@ export class PaymentStepPage {
   private elementFinder: ElementFinder;
 
   constructor() {
-    this.elementFinder = $('#form > p > button > span');
+    this.elementFinder = $('#HOOK_PAYMENT > div:nth-child(1) > div > p > a');
   }
 
-  public async payment(): Promise<void> {
+  public async paymentShippingStep(): Promise<void> {
     await this.elementFinder.click();
   }
 }

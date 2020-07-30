@@ -8,6 +8,8 @@ export class SignInStepPage {
   }
 
   public async signIn(): Promise<void> {
+    await $('#email').sendKeys('aperdomobo@gmail.com');
+    await $('#passwd').sendKeys('WorkshopProtractor');
     await this.elementFinder.click();
   }
 }

@@ -1,13 +1,9 @@
-import { $, ElementFinder } from 'protractor';
+import { $ } from 'protractor';
 
 export class OrderSummaryPage {
-  private elementFinder: ElementFinder;
-
-  constructor() {
-    this.elementFinder = $('#cart_navigation > button > span');
-  }
-
   public async orderSummary(): Promise<void> {
-    await this.elementFinder.click();
+    await expect($('#center_column > div > p > strong').getText()).toBe(
+      'Your order on My Store is complete.'
+    );
   }
 }
